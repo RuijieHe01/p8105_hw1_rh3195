@@ -1,0 +1,85 @@
+---
+title: "p8105_hw1_rh3195"
+author: "Ruijie He"
+date: "2023-09-23"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+## Problem 1
+```{r}
+library ("moderndive")
+data("early_january_weather")
+```
+# variables in dataset
+```{r} 
+variables <- colnames(early_january_weather)
+variables
+```
+# Size of dataset
+```{r}
+num_rows <- nrow(early_january_weather)
+num_cols <- ncol(early_january_weather)
+num_rows
+```
+```{r}
+num_cols
+```
+```{r}
+mean_temp <- mean (early_january_weather$temp)
+mean_temp
+```
+
+- There are 15 variables in this dataset. Some important variables including year, month, day, and time_hour that tells the time. The wind direction, wind speed, and wind-gust that is related to the wind. Also the "temp" tells temperature and "humid" tells the humidity. It has 358 rows and 15 columns. The mean temperature is 39.58 degree.
+# Making scatterplot of temp (y) vs. time_hour (x)
+```{r}
+library (ggplot2)
+
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) +
+  geom_point() +
+  labs(x = "Time_hour", y = "Temp", color = "Humid") +
+  ggtitle("Scatterplot of time_hour vs. Temperature") +
+  theme_minimal()
+```
+##Describe pattern of scatterplot##
+
+- The scatterplot shows that the two variables time_hour and tempeartue are having a positive association. Because as the temperature increases as the time_hour do. And the data points on this plot are assembled closely nearly to a linear line, which illustrating a linear relationship.
+```{r}
+ggsave("scatterplot_of_time_vs_temperature.pdf", width = 6, height =4)
+```
+
+## Problem 2
+```{r}
+library (tidyverse)
+```
+```{r}
+my_df =
+  tibble(
+    vec_numeric = rnorm (10),
+   vec_logical = vec_numeric > 0,
+   vec_char = c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J"),
+   vec_factor = factor(
+     sample(c("L0", "L1", "L2"), 10, rep = TRUE)
+   )
+  )
+print (my_df)
+```
+```{r}
+mean_numeric = mean(pull(my_df, vec_numeric))
+mean_logical = mean(pull(my_df, vec_logical))
+mean_char = mean(pull(my_df, vec_char))
+mean_factor = mean(pull(my_df, vec_factor))
+print (mean_numeric)
+print (mean_logical)
+print (mean_char)
+print (mean_factor)
+```
+- The variable of vec_numeric and vec_logical have mean. Charactor variable and factor variable do not generates mean because they are not numeric number or logical.
+
+```{r}
+as.numeric(pull(my_df, vec_logical))
+as.numeric(pull(my_df, vec_char))
+as.numeric(pull(my_df, vec_factor))
+```
+- The vec_logical is converted to binary datapoints where 0 is false and 1 is true. The vec_factor also get translated to 3 categories based on given lavels. The only variable that is unable to convert to numeric is the vec_char. This helps me to understand what happens when trying to take the mean. It tells that mean should be numeric numbers.
