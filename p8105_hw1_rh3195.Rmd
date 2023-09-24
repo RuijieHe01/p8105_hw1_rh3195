@@ -12,12 +12,12 @@ output:
 library ("moderndive")
 data("early_january_weather")
 ```
-# variables in dataset
+#variables in dataset
 ```{r} 
 variables <- colnames(early_january_weather)
 variables
 ```
-# Size of dataset
+#Size of dataset
 ```{r}
 num_rows <- nrow(early_january_weather)
 num_cols <- ncol(early_january_weather)
