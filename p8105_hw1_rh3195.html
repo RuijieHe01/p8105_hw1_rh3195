@@ -428,16 +428,16 @@ print (my_df)</code></pre>
 <pre><code>## # A tibble: 10 × 4
 ##    vec_numeric vec_logical vec_char vec_factor
 ##          &lt;dbl&gt; &lt;lgl&gt;       &lt;chr&gt;    &lt;fct&gt;     
-##  1      0.261  TRUE        A        L1        
-##  2      0.469  TRUE        B        L1        
-##  3      2.34   TRUE        C        L0        
-##  4      0.0336 TRUE        D        L0        
-##  5     -0.237  FALSE       E        L0        
-##  6     -0.698  FALSE       F        L0        
-##  7     -0.980  FALSE       G        L1        
-##  8     -1.40   FALSE       H        L2        
-##  9     -0.0488 FALSE       I        L1        
-## 10     -0.480  FALSE       J        L2</code></pre>
+##  1       0.547 TRUE        A        L2        
+##  2      -0.399 FALSE       B        L1        
+##  3       0.666 TRUE        C        L1        
+##  4      -1.04  FALSE       D        L2        
+##  5       0.459 TRUE        E        L1        
+##  6      -2.06  FALSE       F        L1        
+##  7      -1.44  FALSE       G        L0        
+##  8       0.458 TRUE        H        L0        
+##  9       2.31  TRUE        I        L2        
+## 10      -1.44  FALSE       J        L0</code></pre>
 <pre class="r"><code>mean_numeric = mean(pull(my_df, vec_numeric))
 mean_logical = mean(pull(my_df, vec_logical))
 mean_char = mean(pull(my_df, vec_char))</code></pre>
@@ -447,9 +447,9 @@ mean_char = mean(pull(my_df, vec_char))</code></pre>
 <pre><code>## Warning in mean.default(pull(my_df, vec_factor)): argument is not numeric or
 ## logical: returning NA</code></pre>
 <pre class="r"><code>print (mean_numeric)</code></pre>
-<pre><code>## [1] -0.0742929</code></pre>
+<pre><code>## [1] -0.1935468</code></pre>
 <pre class="r"><code>print (mean_logical)</code></pre>
-<pre><code>## [1] 0.4</code></pre>
+<pre><code>## [1] 0.5</code></pre>
 <pre class="r"><code>print (mean_char)</code></pre>
 <pre><code>## [1] NA</code></pre>
 <pre class="r"><code>print (mean_factor)</code></pre>
