@@ -2,9 +2,8 @@
 title: "p8105_hw1_rh3195"
 author: "Ruijie He"
 date: "2023-09-23"
-output:
-  pdf_document: default
-  html_document: default
+output: 
+git_document: default
 ---
 
 ## Problem 1
