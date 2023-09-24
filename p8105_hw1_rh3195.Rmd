@@ -77,7 +77,7 @@ print (mean_factor)
 ```
 - The variable of vec_numeric and vec_logical have mean. Charactor variable and factor variable do not generates mean because they are not numeric number or logical.
 
-```{r}
+```{r, results = 'hide', warning =FALSE}
 as.numeric(pull(my_df, vec_logical))
 as.numeric(pull(my_df, vec_char))
 as.numeric(pull(my_df, vec_factor))
