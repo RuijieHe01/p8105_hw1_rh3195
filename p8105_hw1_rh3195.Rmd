@@ -32,7 +32,8 @@ mean_temp
 ```
 
 - There are 15 variables in this dataset. Some important variables including year, month, day, and time_hour that tells the time. The wind direction, wind speed, and wind-gust that is related to the wind. Also the "temp" tells temperature and "humid" tells the humidity. It has 358 rows and 15 columns. The mean temperature is 39.58 degree.
-# Making scatterplot of temp (y) vs. time_hour (x)
+
+#Making scatterplot of temp (y) vs. time_hour (x)
 ```{r}
 library (ggplot2)
 
